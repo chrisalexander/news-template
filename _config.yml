@@ -1,0 +1,29 @@
+permalink: /data-science/:categories/:year/:title/
+exclude: [Gemfile, README.md]
+paginate: 10
+paginate_path: "/page/:num/"
+plugins: [jekyll-paginate]
+name: Data Science News
+blurb: All the latest news, information, videos and articles in the wide world of Data Science.
+contact: If you'd like to share a story, advertise, appear on a podcast, or otherwise get in touch, please email
+email: dsn@chris-alexander.co.uk
+author: Chris Alexander
+collections:
+  category:
+    output: true
+    permalink: /:collection/:name
+defaults:
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      excerpt_separator: <!-- - -->
